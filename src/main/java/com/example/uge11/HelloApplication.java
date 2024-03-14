@@ -32,10 +32,11 @@ public class HelloApplication extends Application {
         final LineChart<String,Number> lineChart =
                 new LineChart<String,Number>(xAxis,yAxis);
 
-        lineChart.setTitle("Stock Monitoring, 2010");
+        lineChart.setTitle("Food waste, 2024");
         yAxis.setAutoRanging(false);
         yAxis.setTickUnit(250);
         xAxis.setEndMargin(0.5);
+
 
         File directory = new File("C:/test/memeTest");
 
