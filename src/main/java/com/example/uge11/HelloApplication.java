@@ -50,28 +50,20 @@ public class HelloApplication extends Application {
             int tempUpperBound = 0;
             for (int i = 1; i <= 12; i++) {
                 int tempTotal = 0;
-                int totelWeight = 0;
                 for (Record s : buckets.get(j).getData()) {
                     if (s.month == i) {
-                        if(tempTotal >= Integer.parseInt(s.weight)){ //Remove '=' if trash is not emptied if the same value
-                            totelWeight += tempTotal;
-                            tempTotal = Integer.parseInt(s.weight);
-                        }
-                        else{
-                            tempTotal = Integer.parseInt(s.weight);
-                        }
-                        //tempTotal += Integer.parseInt(s.weight);
+                        tempTotal += Integer.parseInt(s.weight);
                     }
                 }
-                System.out.println("Month: " + i + " total weight: " + totelWeight);
-                listOfSeries.get(j).getData().add(new XYChart.Data(new DateFormatSymbols().getMonths()[i-1], totelWeight));
+                System.out.println("Month: " + i + " total weight: " + tempTotal);
+                listOfSeries.get(j).getData().add(new XYChart.Data(new DateFormatSymbols().getMonths()[i-1], tempTotal));
                 if(tempTotal < tempLowerBound){
                     tempLowerBound = tempTotal;
-                    yAxis.setLowerBound(totelWeight-500);
+                    yAxis.setLowerBound(tempTotal-500);
                 }
                 if(tempTotal > tempUpperBound){
                     tempUpperBound = tempTotal;
-                    yAxis.setUpperBound(totelWeight+500);
+                    yAxis.setUpperBound(tempTotal+500);
                 }
             }
             listOfSeries.get(j).setName((buckets.get(j).getFileName().split("[.]"))[0]);
