@@ -194,7 +194,7 @@ public class HelloApplication extends Application {
             listOfSeries.add(new XYChart.Series());
             int tempLowerBound = 90001;
             int tempUpperBound = 0;
-            for (int i = 1; i <= 31; i++) {
+            for (int i = 1; i <= 30; i++) {
                 int tempTotal = 0;
                 for (Record s : buckets.get(j).getData()) {
                     if (s.month == selectedMonth && s.day == i) {
@@ -265,7 +265,7 @@ public class HelloApplication extends Application {
             int tempUpperBound = 0;
             if (buckets.get(j).getData().get(0).adress.equals(selectedLocation)) {
                 listOfSeries.add(new XYChart.Series());
-                for (int i = 1; i <= 31; i++) {
+                for (int i = 1; i <= 30; i++) {
                     int tempTotal = 0;
                     for (Record s : buckets.get(j).getData()) {
                         if (s.month == selectedMonth && s.day == i) {
