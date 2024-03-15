@@ -27,7 +27,7 @@ public class HelloApplication extends Application {
     Scanner scanner = null;
     List<BucketID> buckets = new ArrayList<>();
     List<XYChart.Series> listOfSeries = new ArrayList<>();
-    File directory = new File("C:/temp/W11_Trashcan");
+    File directory = new File("C:/test/memeTest");
     final ComboBox month = new ComboBox();
     final ComboBox timeRange = new ComboBox();
     final ComboBox location = new ComboBox();
@@ -233,7 +233,7 @@ public class HelloApplication extends Application {
                 for (int i = 1; i <= 12; i++) {
                     int tempTotal = 0;
                     for (Record s : buckets.get(j).getData()) {
-                        if (s.day == i) {
+                        if (s.month == i) {
                             tempTotal += Integer.parseInt(s.weight);
                         }
                     }
